@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const navItems = [
   { label: 'Inicio', href: '/' },
@@ -14,6 +15,11 @@ const navItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = useCallback(() => {
     setMenuOpen((prev) => !prev);
@@ -30,7 +36,7 @@ export default function Header() {
         className="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-5 py-2 cursor-pointer"
       >
         <span className="text-primary text-sm font-medium">
-          {menuOpen ? 'Close' : 'Menu'}
+          {menuOpen ? 'CLOSE' : 'MENU'}
         </span>
         <div className="relative w-4 h-3.5">
           <span
@@ -55,30 +61,39 @@ export default function Header() {
         </div>
       </button>
 
-      <div
-        className={`fixed inset-0 flex items-center justify-center bg-white/5 backdrop-blur-2xl transition-all duration-700 ease-in-out ${
-          menuOpen
-            ? 'opacity-100 pointer-events-auto scale-100 rounded-none'
-            : 'opacity-0 pointer-events-none scale-0 rounded-[25px]'
-        }`}
-        style={{ transformOrigin: 'top right' }}
-      >
-        <nav>
-          <ul className="flex flex-col items-center gap-8">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  onClick={toggleMenu}
-                  className="text-white/80 hover:text-white text-3xl font-medium transition-colors"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+      {mounted && createPortal(
+        <div
+          className={`fixed inset-0 transition-all duration-700 ease-in-out ${
+            menuOpen
+              ? 'opacity-100 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
+          }`}
+          style={{
+            zIndex: 9999,
+            transformOrigin: 'top right',
+            transform: menuOpen ? 'scale(1)' : 'scale(0)',
+            borderRadius: menuOpen ? '0' : '25px',
+          }}
+        >
+          <div className="absolute inset-0 bg-white/5 backdrop-blur-2xl" />
+          <nav className="relative z-10 flex items-center justify-center w-full h-full">
+            <ul className="flex flex-col items-center gap-8">
+              {navItems.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    onClick={toggleMenu}
+                    className="text-white/80 hover:text-white text-3xl font-medium transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>,
+        document.body
+      )}
     </>
   );
 }
