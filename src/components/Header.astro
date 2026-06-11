@@ -1,14 +1,17 @@
 ---
-const navItems = [
+const navLeft = [
   { label: "Inicio", href: "/" },
+  { label: "Nosotros", href: "/nosotros" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contacto", href: "/contacto" },
+];
+
+const navRight = [
   { label: "Desarrollo Web", href: "/desarrollo-web" },
   { label: "Tiendas Online", href: "/tiendas-online" },
   { label: "SEO y Marketing", href: "/seo-marketing" },
   { label: "Mantenimiento Web", href: "/mantenimiento-web" },
   { label: "Hosting y Dominios", href: "/hosting-dominios" },
-  { label: "Nosotros", href: "/nosotros" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contacto", href: "/contacto" },
 ];
 ---
 
@@ -53,16 +56,16 @@ const navItems = [
   style="z-index: 9999; transform: translateY(-100%);"
 >
   <div class="bg-dark min-h-screen">
-    <div class="h-full flex flex-col gap-10 p-6">
-      <div class="rounded-[20px] bg-dark pt-20">
+    <div class="h-full flex flex-row p-6 gap-10">
+      <div class="w-[40%] rounded-[20px] bg-primary p-8 flex flex-col justify-center">
         <nav>
-          <ul class="flex flex-col items-center gap-8">
+          <ul class="flex flex-col gap-8">
             {
-              navItems.map((item) => (
+              navLeft.map((item) => (
                 <li>
                   <a
                     href={item.href}
-                    class="nav-link text-primary hover:text-dark text-3xl font-medium transition-colors"
+                    class="nav-link text-dark/70 hover:text-dark text-4xl font-bold transition-colors"
                   >
                     {item.label}
                   </a>
@@ -72,7 +75,24 @@ const navItems = [
           </ul>
         </nav>
       </div>
-      <div class="rounded-[20px] bg-dark h-[420px]"></div>
+      <div class="w-[60%] rounded-[20px] bg-primary p-8 flex flex-col justify-center">
+        <nav>
+          <ul class="flex flex-col gap-8">
+            {
+              navRight.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="nav-link text-dark/70 hover:text-dark text-4xl font-bold transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
     </div>
   </div>
 </div>
