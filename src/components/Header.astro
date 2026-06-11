@@ -25,21 +25,22 @@ const navItems = [
   </div>
 </button>
 
-<div id="menu-overlay" class="fixed inset-0 transition-all duration-700 ease-in-out pointer-events-none opacity-0" style="z-index: 9999; transform-origin: top right; transform: scale(0); border-radius: 25px;">
-  <div class="absolute inset-0 bg-white/5 backdrop-blur-2xl" />
-  <nav class="relative z-10 flex items-center justify-center w-full h-full">
-    <ul class="flex flex-col items-center gap-8">
-      {
-        navItems.map((item) => (
-          <li>
-            <a href={item.href} class="nav-link text-white/80 hover:text-white text-3xl font-medium transition-colors">
-              {item.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+<div id="menu-overlay" class="fixed left-0 right-0 top-0 pointer-events-none" style="z-index: 9999; transform: translateY(-100%);">
+  <div class="bg-white/5 backdrop-blur-2xl min-h-screen">
+    <nav class="flex items-center justify-center min-h-screen">
+      <ul class="flex flex-col items-center gap-8">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href} class="nav-link text-white/80 hover:text-white text-3xl font-medium transition-colors">
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <script>
@@ -57,10 +58,9 @@ const navItems = [
 
   function openMenu() {
     isOpen = true;
-    menuOverlay.classList.remove('pointer-events-none', 'opacity-0');
-    menuOverlay.classList.add('pointer-events-auto', 'opacity-100');
-    menuOverlay.style.transform = 'scale(1)';
-    menuOverlay.style.borderRadius = '0';
+    menuOverlay.classList.remove('pointer-events-none');
+    menuOverlay.classList.add('pointer-events-auto');
+    menuOverlay.style.transform = 'translateY(0)';
     menuLabel.textContent = 'CLOSE';
     bar1.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 top-1/2 -translate-y-1/2 rotate-45';
     bar2.className = 'absolute left-0 top-1/2 -translate-y-1/2 block h-0.5 w-full bg-primary rounded transition-all duration-300 opacity-0';
@@ -69,10 +69,9 @@ const navItems = [
 
   function closeMenu() {
     isOpen = false;
-    menuOverlay.classList.remove('pointer-events-auto', 'opacity-100');
-    menuOverlay.classList.add('pointer-events-none', 'opacity-0');
-    menuOverlay.style.transform = 'scale(0)';
-    menuOverlay.style.borderRadius = '25px';
+    menuOverlay.classList.remove('pointer-events-auto');
+    menuOverlay.classList.add('pointer-events-none');
+    menuOverlay.style.transform = 'translateY(-100%)';
     menuLabel.textContent = 'MENU';
     bar1.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 top-0';
     bar2.className = 'absolute left-0 top-1/2 -translate-y-1/2 block h-0.5 w-full bg-primary rounded transition-all duration-300 opacity-100';
