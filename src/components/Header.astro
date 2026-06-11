@@ -1,0 +1,95 @@
+---
+const navItems = [
+  { label: 'Inicio', href: '/' },
+  { label: 'Desarrollo Web', href: '/desarrollo-web' },
+  { label: 'Tiendas Online', href: '/tiendas-online' },
+  { label: 'SEO y Marketing', href: '/seo-marketing' },
+  { label: 'Mantenimiento Web', href: '/mantenimiento-web' },
+  { label: 'Hosting y Dominios', href: '/hosting-dominios' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contacto', href: '/contacto' },
+];
+---
+
+<div id="header-logo" class="fixed top-5 left-5 z-[10000] flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full p-2">
+  <img src="/img/watacon-logo.svg" alt="Watacon" class="w-20 h-20" />
+</div>
+
+<button id="menu-toggle" class="fixed top-5 right-5 z-[10000] flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-5 py-2 cursor-pointer">
+  <span id="menu-label" class="text-primary text-sm font-medium">MENU</span>
+  <div class="relative w-4 h-3.5">
+    <span id="bar1" class="absolute left-0 top-0 block h-0.5 w-full bg-primary rounded transition-all duration-300" />
+    <span id="bar2" class="absolute left-0 top-1/2 -translate-y-1/2 block h-0.5 w-full bg-primary rounded transition-all duration-300" />
+    <span id="bar3" class="absolute left-0 bottom-0 block h-0.5 w-full bg-primary rounded transition-all duration-300" />
+  </div>
+</button>
+
+<div id="menu-overlay" class="fixed inset-0 transition-all duration-700 ease-in-out pointer-events-none opacity-0" style="z-index: 9999; transform-origin: top right; transform: scale(0); border-radius: 25px;">
+  <div class="absolute inset-0 bg-white/5 backdrop-blur-2xl" />
+  <nav class="relative z-10 flex items-center justify-center w-full h-full">
+    <ul class="flex flex-col items-center gap-8">
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href} class="nav-link text-white/80 hover:text-white text-3xl font-medium transition-colors">
+              {item.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</div>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuLabel = document.getElementById('menu-label');
+  const menuOverlay = document.getElementById('menu-overlay');
+  const bar1 = document.getElementById('bar1');
+  const bar2 = document.getElementById('bar2');
+  const bar3 = document.getElementById('bar3');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  let isOpen = false;
+
+  document.body.appendChild(menuOverlay);
+
+  function openMenu() {
+    isOpen = true;
+    menuOverlay.classList.remove('pointer-events-none', 'opacity-0');
+    menuOverlay.classList.add('pointer-events-auto', 'opacity-100');
+    menuOverlay.style.transform = 'scale(1)';
+    menuOverlay.style.borderRadius = '0';
+    menuLabel.textContent = 'CLOSE';
+    bar1.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 top-1/2 -translate-y-1/2 rotate-45';
+    bar2.className = 'absolute left-0 top-1/2 -translate-y-1/2 block h-0.5 w-full bg-primary rounded transition-all duration-300 opacity-0';
+    bar3.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 top-1/2 -translate-y-1/2 -rotate-45';
+  }
+
+  function closeMenu() {
+    isOpen = false;
+    menuOverlay.classList.remove('pointer-events-auto', 'opacity-100');
+    menuOverlay.classList.add('pointer-events-none', 'opacity-0');
+    menuOverlay.style.transform = 'scale(0)';
+    menuOverlay.style.borderRadius = '25px';
+    menuLabel.textContent = 'MENU';
+    bar1.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 top-0';
+    bar2.className = 'absolute left-0 top-1/2 -translate-y-1/2 block h-0.5 w-full bg-primary rounded transition-all duration-300 opacity-100';
+    bar3.className = 'absolute left-0 block h-0.5 w-full bg-primary rounded transition-all duration-300 bottom-0';
+  }
+
+  function toggleMenu() {
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
