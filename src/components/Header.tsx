@@ -27,13 +27,13 @@ export default function Header() {
 
   return (
     <>
-      <div className="fixed top-5 left-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full p-2">
+      <div className="fixed top-5 left-5 z-[10000] flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full p-2">
         <img src="/img/watacon-logo.svg" alt="Watacon" className="w-20 h-20" />
       </div>
 
       <button
         onClick={toggleMenu}
-        className="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-5 py-2 cursor-pointer"
+        className="fixed top-5 right-5 z-[10000] flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-5 py-2 cursor-pointer"
       >
         <span className="text-primary text-sm font-medium">
           {menuOpen ? 'CLOSE' : 'MENU'}
