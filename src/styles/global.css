@@ -3,7 +3,7 @@
 @theme {
   --color-primary: #FFD282;
   --color-dark: #192339;
-  --font-family-sans: 'Montserrat', sans-serif;
+  --font-sans: 'Montserrat', sans-serif;
 }
 
 @layer base {
