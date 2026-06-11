@@ -21,17 +21,14 @@ export default function Header() {
 
   return (
     <>
-      <button
-        onClick={toggleMenu}
-        className="fixed top-5 left-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-4 py-2 cursor-pointer"
-      >
+      <div className="fixed top-5 left-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-4 py-2">
         <img src="/img/watacon-logo.svg" alt="Watacon" className="w-7 h-7" />
         <span className="text-white font-bold text-sm tracking-wide">Watacon</span>
-      </button>
+      </div>
 
       <button
         onClick={toggleMenu}
-        className="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-5 py-2 cursor-pointer"
+        className="fixed top-5 right-5 z-50 flex items-center gap-3 bg-white/10 backdrop-blur-xl rounded-full px-5 py-2 cursor-pointer"
       >
         <span className="text-white text-sm font-medium">
           {menuOpen ? 'Close' : 'Menu'}
@@ -67,8 +64,8 @@ export default function Header() {
         }`}
         style={{
           clipPath: menuOpen
-            ? 'circle(150% at 0% 0%)'
-            : 'circle(0% at 0% 0%)',
+            ? 'circle(150% at 100% 0%)'
+            : 'circle(0% at 100% 0%)',
         }}
       >
         <nav>
