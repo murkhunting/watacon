@@ -16,4 +16,8 @@
   body {
     color: #fff;
   }
+
+  .material-symbols-outlined {
+    font-size: inherit;
+  }
 }
