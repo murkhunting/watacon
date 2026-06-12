@@ -17,7 +17,14 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
     <title>{title} | Watacon</title>
   </head>
   <body class="w-screen h-screen overflow-hidden font-sans">
@@ -28,10 +35,13 @@ const { title } = Astro.props;
       loop
       playsinline
     >
-      <source src="/videos/watacon.mp4" type="video/mp4" />
+      <source
+        src="https://www.pexels.com/es-es/download/video/11499368/"
+        type="video/mp4"
+      />
     </video>
 
-    <div class="fixed inset-0 z-[1] bg-[#192339]/95"></div>
+    <div class="fixed inset-0 z-[1] bg-[#192339]/60"></div>
 
     <Header />
 
