@@ -49,7 +49,7 @@ const navRight = [
   class="overflow-hidden fixed inset-0 pointer-events-none"
   style="z-index: 9999;"
 >
-  <div class="bg-dark/30 backdrop-blur-[30px] min-h-screen">
+  <div class="bg-dark/70 backdrop-blur-[35px] rounded-[30px] min-h-screen">
     <div class="h-full flex flex-row p-4 gap-6">
       <div
         class="w-[75%] rounded-[30px] h-[95vh] p-8 flex flex-col items-center justify-center overflow-hidden"
@@ -139,7 +139,7 @@ const navRight = [
         <img
           src="/img/watacon-logo-dark.svg"
           alt="Watacon"
-          class="absolute bottom-[-20%] w-auto h-[600px] opacity-10 z-1"
+          class="absolute bottom-[-20%] w-auto h-[550px] max-w-none opacity-10 z-1"
         />
         <div class="flex flex-row items-center justify-end gap-4">
           <h2 class="text-dark text-[1.4vw] font-bold">
@@ -163,6 +163,7 @@ const navRight = [
     const menuInner = document.querySelector("#menu-overlay .flex-row");
     const leftDiv = menuInner.children[0];
     const rightDiv = menuInner.children[1];
+    const h2Elements = leftDiv.querySelectorAll("h2");
 
     let isOpen = false;
 
@@ -172,28 +173,33 @@ const navRight = [
       scale: 0,
       transformOrigin: "top right",
     });
-    gsap.set(leftDiv, { autoAlpha: 0 });
+    gsap.set(h2Elements, { autoAlpha: 0, y: -30 });
     gsap.set(rightDiv, { autoAlpha: 0, x: "100%" });
 
     let tl = gsap.timeline({ paused: true });
 
-    tl
-      .to(menuOverlay, {
-        scale: 1,
-        duration: 0.6,
-        ease: "power2.inOut",
-      })
-      .to(leftDiv, {
+    tl.to(menuOverlay, {
+      scale: 1,
+      duration: 0.6,
+      ease: "power2.inOut",
+    })
+      .to(h2Elements, {
         autoAlpha: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      })
-      .to(rightDiv, {
-        autoAlpha: 1,
-        x: "0%",
+        y: 0,
+        stagger: 0.1,
         duration: 0.4,
         ease: "power2.out",
-      }, "-=0.1");
+      })
+      .to(
+        rightDiv,
+        {
+          autoAlpha: 1,
+          x: "0%",
+          duration: 0.4,
+          ease: "power2.out",
+        },
+        "-=0.1",
+      );
 
     tl.eventCallback("onReverseComplete", () => {
       menuOverlay.classList.add("pointer-events-none");
