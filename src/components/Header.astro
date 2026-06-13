@@ -11,7 +11,7 @@ const navRight = [
 <a
   href="/"
   id="header-logo"
-  class="fixed top-2 left-2 z-[10000] flex items-center gap-3"
+  class="fixed top-4 left-4 z-[10000] flex items-center gap-3"
 >
   <img
     src="/img/watacon-logo.svg"
@@ -22,7 +22,7 @@ const navRight = [
 <!-- OPEN MENU BUTTON -->
 <button
   id="menu-toggle"
-  class="fixed top-3 right-3 z-[10000] flex items-center gap-3 bg-primary rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg"
+  class="fixed top-4 right-4 z-[10000] flex items-center gap-3 bg-primary rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg"
 >
   <span class="text-dark text-lg font-bold">Menú</span>
   <div class="bg-dark rounded-full p-2">
@@ -50,67 +50,67 @@ const navRight = [
   style="z-index: 9999; transform: translateY(-100%);"
 >
   <div class="bg-dark/30 backdrop-blur-[30px] min-h-screen">
-    <div class="h-full flex flex-row p-3 gap-6">
+    <div class="h-full flex flex-row p-4 gap-6">
       <div
         class="w-[75%] rounded-[20px] h-[95vh] p-8 flex flex-col items-center justify-center overflow-hidden"
       >
         <nav>
           <a
-            href="/webs-corporativas"
+            href="/web"
             class="w-full flex flex-row items-center justify-center p-4 gap-4 group relative"
           >
             <h2
               class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              Webs Corporativas
+              Web Corporativa
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[20px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
           </a>
           <a
-            href="/tiendas-online"
+            href="/ecommerce"
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
               class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              Tiendas Online
+              Tienda Online
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[20px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
           </a>
           <a
-            href="/seo-marketing"
+            href="/seo"
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
               class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              SEO y Marketing
+              SEO y Optimización
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[20px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
           </a>
           <a
-            href="/mantenimiento-web"
+            href="/mantenimiento"
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
               class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              Mantenimiento Web
+              Mantenimiento
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[20px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -118,7 +118,7 @@ const navRight = [
         </nav>
       </div>
       <div
-        class="w-[25%] rounded-[40px] bg-primary mt-15 pt-12 px-12 pb-8 flex flex-col justify-between"
+        class="w-[25%] rounded-[40px] bg-primary mt-15 pt-10 px-10 pb-8 flex flex-col justify-between"
       >
         <nav class="z-10">
           <ul class="flex flex-col items-start gap-8">
@@ -142,7 +142,9 @@ const navRight = [
           class="absolute top-[20%] w-auto h-[500px] opacity-10 z-1"
         />
         <div class="flex flex-row items-center justify-end gap-4">
-          <h2 class="text-dark text-[1.7vw] font-bold">© 2026 | Watacon</h2>
+          <h2 class="text-dark text-[1.4vw] font-bold">
+            &copy; {new Date().getFullYear()} | Watacon
+          </h2>
         </div>
       </div>
     </div>
