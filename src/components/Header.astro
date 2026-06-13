@@ -50,9 +50,9 @@ const navRight = [
   style="z-index: 9999; transform: translateY(-100%);"
 >
   <div class="bg-dark/30 backdrop-blur-[30px] min-h-screen">
-    <div class="h-full flex flex-row px-3 pb-3 pt-18 gap-6">
+    <div class="h-full flex flex-row p-3 gap-6">
       <div
-        class="w-[70%] rounded-[20px] h-[88vh] p-8 flex flex-col items-center justify-center overflow-hidden"
+        class="w-[75%] rounded-[20px] h-[95vh] p-8 flex flex-col items-center justify-center overflow-hidden"
       >
         <nav>
           <a
@@ -60,12 +60,12 @@ const navRight = [
             class="w-full flex flex-row items-center justify-center p-4 gap-4 group relative"
           >
             <h2
-              class="nav-link text-primary text-center hover:text-white group-hover:text-white text-[4.2vw] font-bold transition-colors relative z-10"
+              class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors"
             >
               Webs Corporativas
             </h2>
             <img
-              class="w-[40vh] h-[40vh] rounded-[30px] object-cover absolute left-0 -translate-x-full group-hover:translate-x-0 group-hover:scale-120 group-hover:rotate-25 transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -75,12 +75,12 @@ const navRight = [
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
-              class="nav-link text-primary text-center hover:text-white group-hover:text-white text-[4.2vw] font-bold transition-colors relative z-10"
+              class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors"
             >
               Tiendas Online
             </h2>
             <img
-              class="w-[40vh] h-[40vh] rounded-[30px] object-cover absolute left-0 -translate-x-full group-hover:translate-x-0 group-hover:scale-120 group-hover:rotate-25 transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -90,12 +90,12 @@ const navRight = [
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
-              class="nav-link text-primary text-center hover:text-white group-hover:text-white text-[4.2vw] font-bold transition-colors relative z-10"
+              class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors"
             >
               SEO y Marketing
             </h2>
             <img
-              class="w-[40vh] h-[40vh] rounded-[30px] object-cover absolute left-0 -translate-x-full group-hover:translate-x-0 group-hover:scale-120 group-hover:rotate-25 transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -105,27 +105,12 @@ const navRight = [
             class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
           >
             <h2
-              class="nav-link text-primary text-center hover:text-white group-hover:text-white text-[4.2vw] font-bold transition-colors relative z-10"
+              class="nav-link text-primary text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors"
             >
               Mantenimiento Web
             </h2>
             <img
-              class="w-[40vh] h-[40vh] rounded-[30px] object-cover absolute left-0 -translate-x-full group-hover:translate-x-0 group-hover:scale-120 group-hover:rotate-25 transition-transform duration-300 z-0"
-              src="/img/web.png"
-              alt="Tiendas Online"
-            />
-          </a>
-          <a
-            href="/hosting-dominios"
-            class="flex flex-row items-center justify-center p-4 gap-4 group relative w-full"
-          >
-            <h2
-              class="nav-link text-primary text-center hover:text-white group-hover:text-white text-[4.2vw] font-bold transition-colors relative z-10"
-            >
-              Hosting y Dominios
-            </h2>
-            <img
-              class="w-[40vh] h-[40vh] rounded-[30px] object-cover absolute left-0 -translate-x-full group-hover:translate-x-0 group-hover:scale-120 group-hover:rotate-25 transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -133,16 +118,16 @@ const navRight = [
         </nav>
       </div>
       <div
-        class="w-[30%] rounded-[40px] bg-primary pt-12 px-12 pb-8 flex flex-col justify-between"
+        class="w-[25%] rounded-[40px] bg-primary mt-15 pt-12 px-12 pb-8 flex flex-col justify-between"
       >
         <nav class="z-10">
-          <ul class="flex flex-col gap-8">
+          <ul class="flex flex-col items-start gap-8">
             {
               navRight.map((item) => (
                 <li>
                   <a
                     href={item.href}
-                    class="nav-link text-dark hover:text-dark text-4xl font-bold transition-colors"
+                    class="nav-link text-right text-dark rounded-full py-1 px-4 hover:text-primary hover:bg-dark text-4xl font-bold transition-colors"
                   >
                     {item.label}
                   </a>
@@ -154,15 +139,10 @@ const navRight = [
         <img
           src="/img/watacon-logo-dark.svg"
           alt="Watacon"
-          class="absolute top-[20%] w-auto h-[500px] opacity-5 z-1"
+          class="absolute top-[20%] w-auto h-[500px] opacity-10 z-1"
         />
         <div class="flex flex-row items-center justify-end gap-4">
-          <h2 class="text-dark text-[1.9vw] font-bold">© 2026 | Watacon</h2>
-          <img
-            src="/img/watacon-logo-dark.svg"
-            alt="Watacon"
-            class="w-12 h-12"
-          />
+          <h2 class="text-dark text-[1.7vw] font-bold">© 2026 | Watacon</h2>
         </div>
       </div>
     </div>
