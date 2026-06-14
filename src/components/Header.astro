@@ -14,15 +14,15 @@ const navRight = [
   class="fixed top-4 left-4 z-[10000] flex items-center gap-3"
 >
   <img
-    src="/img/watacon-logo.svg"
+    src="/img/watacon-logo.png"
     alt="Watacon"
-    class="w-24 h-24 drop-shadow-lg transition-transform duration-500 hover:rotate-[480deg]"
+    class="w-22 h-22 drop-shadow-lg transition-transform duration-500 hover:rotate-[480deg]"
   />
 </a>
 <!-- OPEN MENU BUTTON -->
 <button
   id="menu-toggle"
-  class="fixed top-4 right-4 z-[10000] flex items-center gap-3 bg-light rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-3 bg-light rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg hover:-translate-y-[4px] transition-all duration-300"
 >
   <span class="text-dark text-lg font-bold">Menú</span>
   <div class="bg-dark rounded-full p-2">
@@ -43,29 +43,6 @@ const navRight = [
   </div>
 </button>
 
-<!-- SOCIAL ICONS -->
-<div class="fixed top-4 left-1/2 -translate-x-1/2 z-[10000] flex flex-row items-center justify-center gap-4">
-  <a
-    href="https://wa.me/XXXXXXXXX"
-    target="_blank"
-    class="w-12 h-12 rounded-full bg-dark flex items-center justify-center hover:bg-primary transition-all duration-300 hover:-translate-y-[3px]"
-  >
-    <i class="ph ph-whatsapp-logo text-primary text-xl hover:text-dark"></i>
-  </a>
-  <a
-    href="mailto:info@watacon.com"
-    class="w-12 h-12 rounded-full bg-dark flex items-center justify-center hover:bg-primary transition-all duration-300 hover:-translate-y-[3px]"
-  >
-    <i class="ph ph-envelope text-primary text-xl hover:text-dark"></i>
-  </a>
-  <a
-    href="tel:+XXXXXXXXX"
-    class="w-12 h-12 rounded-full bg-dark flex items-center justify-center hover:bg-primary transition-all duration-300 hover:-translate-y-[3px]"
-  >
-    <i class="ph ph-phone text-primary text-xl hover:text-dark"></i>
-  </a>
-</div>
-
 <!-- MENU -->
 <div
   id="menu-overlay"
@@ -85,10 +62,10 @@ const navRight = [
             <h2
               class="nav-link text-light text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              Web Corporativa
+              Webs Corporativas
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[13vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -100,10 +77,10 @@ const navRight = [
             <h2
               class="nav-link text-light text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              Tienda Online
+              Tiendas Online
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[13vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -118,7 +95,7 @@ const navRight = [
               SEO y Optimización
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[13vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -133,7 +110,7 @@ const navRight = [
               Mantenimiento
             </h2>
             <img
-              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[20vw] transition-transform duration-300 z-0"
+              class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[13vw] transition-transform duration-300 z-0"
               src="/img/web.png"
               alt="Tiendas Online"
             />
@@ -144,27 +121,48 @@ const navRight = [
         class="w-[25%] overflow-hidden rounded-[30px] bg-light mt-15 pt-10 px-10 pb-8 flex flex-col justify-between"
       >
         <nav class="z-10">
-          <ul class="flex flex-col items-start gap-8">
+          <ul class="flex flex-col items-start gap-6">
             {
               navRight.map((item) => (
                 <li>
-                  <a
-                    href={item.href}
-                    class="nav-link text-right text-dark rounded-full py-1 px-4 hover:text-primary hover:bg-dark hover:translate-x-4 text-4xl font-bold transition-all duration-300"
-                  >
-                    {item.label}
+                  <a href={item.href}>
+                    <h3 class="nav-link text-right text-dark rounded-full py-1 px-4 hover:text-primary hover:bg-dark text-4xl font-bold hover:translate-x-[6px] transition-all duration-300">
+                      {item.label}
+                    </h3>
                   </a>
                 </li>
               ))
             }
           </ul>
+          <div
+            class="mt-10 ml-2 flex flex-row items-center justify-star z-10 gap-4"
+          >
+            <a
+              href="https://wa.me/XXXXXXXXX"
+              target="_blank"
+              class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[3px]"
+            >
+              <i class="ph ph-whatsapp-logo text-[30px]"></i>
+            </a>
+            <a
+              href="mailto:info@watacon.com"
+              class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[4px]"
+            >
+              <i class="ph ph-envelope text-[30px]"></i>
+            </a>
+            <a
+              href="tel:+XXXXXXXXX"
+              class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[4px]"
+            >
+              <i class="ph ph-phone text-[30px]"></i>
+            </a>
+          </div>
         </nav>
         <img
           src="/img/watacon-logo-dark.svg"
           alt="Watacon"
           class="absolute bottom-[-20%] w-auto h-[550px] max-w-none opacity-10 z-1"
         />
-        <div class="flex flex-row items-center justify-center"></div>
         <div class="flex flex-row items-center justify-end gap-4 z-2">
           <h2 class="text-dark text-[1.4vw] font-bold">
             &copy; {new Date().getFullYear()} | Watacon
