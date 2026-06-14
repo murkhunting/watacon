@@ -22,7 +22,7 @@ const navRight = [
 <!-- OPEN MENU BUTTON -->
 <button
   id="menu-toggle"
-  class="fixed top-4 left-1/2 -translate-x-1/2 z-[10000] flex items-center justify-between w-[130px] bg-light rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg hover:-translate-y-[4px] transition-all duration-300"
+  class="fixed top-4 left-1/2 -translate-x-1/2 z-[10000] flex items-center justify-between w-[130px] bg-light hover:bg-primary rounded-full py-1 pr-1 pl-4 cursor-pointer shadow-lg hover:-translate-y-[4px] transition-all duration-300"
 >
   <span id="menu-text" class="text-dark text-lg font-bold">Menú</span>
   <div class="bg-dark rounded-full p-2">
@@ -44,7 +44,7 @@ const navRight = [
 </button>
 <button
   id="menu-toggle"
-  class="fixed top-4 right-4 z-[10000] h-12 flex items-center justify-between w-[150px] bg-light rounded-full py-1 px-4 cursor-pointer shadow-lg hover:-translate-y-[4px] transition-all duration-300"
+  class="fixed top-4 right-4 z-[10000] h-12 flex items-center justify-between w-[150px] bg-light hover:bg-primary rounded-full py-1 px-4 cursor-pointer shadow-lg hover:-translate-y-[4px] transition-all duration-300"
 >
   <span class="text-dark text-lg font-bold">Hablemos</span>
   <i class="ph-bold ph-arrow-up-right text-[25px] text-dark"></i>
@@ -201,7 +201,7 @@ const navRight = [
 
     gsap.set(menuOverlay, {
       scale: 0,
-      transformOrigin: "top right",
+      transformOrigin: "top center",
     });
     gsap.set(h2Elements, { autoAlpha: 0, y: -30 });
     gsap.set(rightDiv, { autoAlpha: 0, x: "100%" });
