@@ -31,6 +31,12 @@ import SplineScene from "../components/SplineScene";
         >
           Optimizadas
         </h2>
+
+        <h3
+          class="text-[1.5vw] font-bold text-light leading-tight text-left w-full mt-6"
+        >
+          Panamá | Ibiza | Barcelona
+        </h3>
       </div>
     </div>
   </section>
@@ -40,8 +46,10 @@ import SplineScene from "../components/SplineScene";
   import { gsap } from "gsap";
 
   const heroTexts = document.querySelectorAll("section h1, section h2");
+  const heroH3 = document.querySelector("section h3");
 
   gsap.set(heroTexts, { autoAlpha: 0, y: -30 });
+  gsap.set(heroH3, { autoAlpha: 0, x: -30 });
 
   gsap.to(heroTexts, {
     autoAlpha: 1,
@@ -50,5 +58,13 @@ import SplineScene from "../components/SplineScene";
     duration: 0.8,
     ease: "power2.out",
     delay: 0.3,
+  });
+
+  gsap.to(heroH3, {
+    autoAlpha: 1,
+    x: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    delay: 1.6,
   });
 </script>
