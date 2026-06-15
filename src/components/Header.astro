@@ -1,9 +1,10 @@
 ---
 const navRight = [
   { label: "Inicio", href: "/" },
+  { label: "Planes y Precios", href: "/planes" },
+  { label: "¿Cómo funciona?", href: "/como" },
   { label: "Nosotros", href: "/nosotros" },
   { label: "FAQs", href: "/faqs" },
-  { label: "Blog", href: "/blog" },
   { label: "Contacto", href: "/contacto" },
 ];
 ---
@@ -100,7 +101,7 @@ const navRight = [
             <h2
               class="nav-link text-light text-center py-0 px-6 rounded-full hover:text-dark hover:bg-primary text-[4vw] font-bold relative z-10 transition-colors duration-300"
             >
-              SEO & Marketing
+              Posicionamiento SEO
             </h2>
             <img
               class="w-[30vw] h-[40vh] rounded-[30px] object-cover absolute left-[-25vw] -translate-x-full group-hover:translate-x-[13vw] transition-transform duration-300 z-0"
@@ -134,7 +135,7 @@ const navRight = [
               navRight.map((item) => (
                 <li>
                   <a href={item.href}>
-                    <h3 class="nav-link text-right text-dark rounded-full py-1 px-4 hover:text-primary hover:bg-dark text-[2vw] font-bold hover:translate-x-[6px] transition-all duration-300">
+                    <h3 class="nav-link text-left text-dark rounded-full py-1 px-4 hover:text-primary hover:bg-dark text-[1.8vw] font-bold hover:translate-x-[6px] transition-all duration-300">
                       {item.label}
                     </h3>
                   </a>
@@ -150,19 +151,19 @@ const navRight = [
               target="_blank"
               class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[3px]"
             >
-              <i class="ph ph-whatsapp-logo text-[30px]"></i>
+              <i class="ph ph-whatsapp-logo text-[35px]"></i>
             </a>
             <a
               href="mailto:info@watacon.com"
               class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[4px]"
             >
-              <i class="ph ph-envelope text-[30px]"></i>
+              <i class="ph ph-envelope text-[35px]"></i>
             </a>
             <a
               href="tel:+XXXXXXXXX"
               class="p-2 rounded-full bg-dark text-primary flex items-center justify-center transition-all duration-300 hover:-translate-y-[4px]"
             >
-              <i class="ph ph-phone text-[30px]"></i>
+              <i class="ph ph-phone text-[35px]"></i>
             </a>
           </div>
         </nav>
